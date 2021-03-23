@@ -12,41 +12,53 @@
       </div>
     </DashedList>
 
-    <label class="your-score">
-      <span>Your name</span>
-      <input
-        type="text"
-        placeholder="Short name, or emotion <3"
-        maxlength="30"
-        v-model="playerName"
-        @keypress.enter="saveResult"
+    <div class="your-score" v-if="!isSent">
+      <label>
+        <span>Your name</span>
+        <input
+            type="text"
+            placeholder="Short name, or emotion <3"
+            maxlength="40"
+            v-model="inputText"
+            @keypress.enter="saveResult"
+        />
+        <span>{{ score }} points</span>
+      </label>
+      <UIButton
+          class="save-result"
+          text="Save on board"
+          @click.native="saveResult"
       />
-      <span>{{ yourScore }} points</span>
-    </label>
+    </div>
 
-    <CloseSpinner @click.native="closeLeaderBoard" />
+    <CloseSpinner @click.native="closeLeaderBoard"/>
   </div>
 </template>
 
 <script>
-import { mapActions, mapMutations, mapGetters } from 'vuex'
-import DashedList from '../UI/DashedList.vue'
-import CloseSpinner from '../UI/CloseSpinner.vue'
+import {mapActions, mapMutations, mapGetters} from 'vuex'
+import DashedList from '/components/UI/DashedList.vue'
+import CloseSpinner from '/components/UI/CloseSpinner.vue'
+import UIButton from '/components/UI/Button.vue'
 
 export default {
   name: 'LeaderBoard',
-  components: { DashedList, CloseSpinner },
+  components: {DashedList, CloseSpinner, UIButton},
 
   data() {
     return {
-      yourScore: 1000,
-      playerName: '',
       isDebug: true,
+      inputText: '',
     }
   },
+  watch: {
+    inputText(text) {
+      this.inputText = text.replace(/[^a-z 0-9]|^\s/gi, '').replace(/\s\s/gi, ' ')
+    },
+  },
   computed: {
-    ...mapGetters('leaderBoard', ['leaders', 'getSortLeaders']),
-    ...mapGetters('game', ['isLeaderBoardOpened']),
+    ...mapGetters('leaderBoard', ['leaders', 'getSortLeaders', 'isSent']),
+    ...mapGetters('game', ['isLeaderBoardOpened', 'score']),
 
     getTop10() {
       return this.getSortLeaders.slice(0, 10)
@@ -57,10 +69,16 @@ export default {
     }
   },
   methods: {
-    ...mapActions('leaderBoard', ['getLeaders']),
+    ...mapActions('leaderBoard', ['getLeaders', 'addLeader']),
     ...mapMutations('game', ['setIsLeaderBoardOpened']),
 
-    saveResult() {},
+    saveResult() {
+      const text = this.inputText.replace(/[^a-z 0-9]/gi, '')
+      if (!text.trim()) return
+
+      this.addLeader({user: text, score: this.score})
+        .then(this.getLeaders)
+    },
 
     closeLeaderBoard() {
       this.setIsLeaderBoardOpened(false)
@@ -89,6 +107,7 @@ export default {
     transform: translateY(0);
     opacity: 1;
   }
+
   &.hide {
     transform: translateY(110%);
     opacity: 0;
@@ -148,6 +167,12 @@ export default {
         margin: 1em 0;
       }
     }
+  }
+
+  .save-result {
+    display: block;
+    max-width: 12em;
+    margin: 3em auto;
   }
 
   .close-spinner {

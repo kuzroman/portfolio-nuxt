@@ -1,0 +1,52 @@
+{
+  "leaders": [
+    {
+      "user": "Some",
+      "score": 10
+    },
+    {
+      "user": "Some",
+      "score": 100
+    },
+    {
+      "user": "sdsd1",
+      "score": 110
+    },
+    {
+      "user": "<script>location.reload()</script>",
+      "score": 12
+    },
+    {
+      "user": "",
+      "score": 102
+    },
+    {
+      "user": "s ",
+      "score": 102
+    },
+    {
+      "user": "sdsd sdsd",
+      "score": 102
+    },
+    {
+      "user": "sd",
+      "score": 102
+    },
+    {
+      "user": "sdsd",
+      "score": 102
+    },
+    {
+      "user": "sd",
+      "score": 102
+    },
+    {
+      "user": "sdv",
+      "score": 102
+    },
+    {
+      "user": "asd",
+      "score": 102
+    }
+  ]
+}

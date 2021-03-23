@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon --watch api --exec \"nuxt\"",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start"
@@ -18,7 +18,11 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "fibers": "^5.0.0",
+    "lowdb": "^1.0.0",
+    "nodemon": "^2.0.7",
     "sass": "^1.32.8",
     "sass-loader": "10"
   }

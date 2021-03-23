@@ -17,7 +17,7 @@ export const state = () => ({
   isGameStart: defaultIsGameStart,
   isGameFinished: defaultIsGameFinished,
   isLeaderBoardOpened: defaultIsLeaderBoardOpened,
-  score: defaultScore,
+  score: 102, //defaultScore,
   letters: [...defaultLetters],
   killedLetters: defaultLetters.length,
   shots: defaultShots,

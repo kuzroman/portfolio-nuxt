@@ -1,5 +1,5 @@
 <template>
-  <div class="robot-shooter" :class="stiles" :style="left"></div>
+  <div class="robot-shooter" :class="state" :style="left"></div>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
     left() {
       return {left: this.position.x1 + 'px'}
     },
-    stiles() {
+    state() {
       return {
         active: this.isGameReady && !this.isGameFinished,
         damage: this.isDamage,
