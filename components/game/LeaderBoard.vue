@@ -3,33 +3,46 @@
     <h2 class="title">Leader Board</h2>
 
     <DashedList>
-      <div class="result" v-for="(leader, i) in getTop10" :key="i">
-        <div>
-          <span>{{ i + 1 }}st.</span>
-          <span>{{ leader.user }}</span>
+      <template v-for="(leader, i) in top10Leaders">
+
+        <LeaderBoardForm
+          v-if="i === yourRate && isResultInTop"
+          @leader-board-form--save-result="getLeaders"
+        />
+
+        <div class="result" :key="i">
+          <div>
+            <span>{{ leader.rate + 1 }}</span>
+            <span>{{ leader.user }}</span>
+          </div>
+          <div>{{ leader.score }} points</div>
         </div>
-        <div>{{ leader.score }} points</div>
-      </div>
+      </template>
     </DashedList>
 
-    <div class="your-score" v-if="!isSent">
-      <label>
-        <span>Your name</span>
-        <input
-            type="text"
-            placeholder="Short name, or emotion <3"
-            maxlength="40"
-            v-model="inputText"
-            @keypress.enter="saveResult"
+    <DashedList v-if="!isResultInTop">
+      <template v-for="(leader, i) in betweenLeaders">
+
+        <LeaderBoardForm
+          v-if="i === 1"
+          @leader-board-form--save-result="getLeaders"
         />
-        <span>{{ score }} points</span>
-      </label>
-      <UIButton
-          class="save-result"
-          text="Save on board"
-          @click.native="saveResult"
-      />
-    </div>
+
+        <div class="result" :key="i">
+          <div>
+            <span>{{ leader.rate + 1 }}</span>
+            <span>{{ leader.user }}</span>
+          </div>
+          <div>{{ leader.score }} points</div>
+        </div>
+
+      </template>
+    </DashedList>
+
+    <LeaderBoardForm
+        v-if="getSortLeaders.length === yourRate"
+        @leader-board-form--save-result="getLeaders"
+    />
 
     <CloseSpinner @click.native="closeLeaderBoard"/>
   </div>
@@ -39,46 +52,47 @@
 import {mapActions, mapMutations, mapGetters} from 'vuex'
 import DashedList from '/components/UI/DashedList.vue'
 import CloseSpinner from '/components/UI/CloseSpinner.vue'
+import LeaderBoardForm from '/components/game/LeaderBoardForm.vue'
 import UIButton from '/components/UI/Button.vue'
 
 export default {
   name: 'LeaderBoard',
-  components: {DashedList, CloseSpinner, UIButton},
+  components: {DashedList, CloseSpinner, UIButton, LeaderBoardForm},
 
   data() {
     return {
-      isDebug: true,
-      inputText: '',
+      isDebug: false,
     }
   },
-  watch: {
-    inputText(text) {
-      this.inputText = text.replace(/[^a-z 0-9]|^\s/gi, '').replace(/\s\s/gi, ' ')
-    },
-  },
   computed: {
-    ...mapGetters('leaderBoard', ['leaders', 'getSortLeaders', 'isSent']),
+    ...mapGetters('leaderBoard', ['getSortLeaders']),
     ...mapGetters('game', ['isLeaderBoardOpened', 'score']),
 
-    getTop10() {
+    top10Leaders() {
       return this.getSortLeaders.slice(0, 10)
     },
 
     state() {
       return this.isLeaderBoardOpened || this.isDebug ? 'active' : 'hide'
-    }
+    },
+
+    yourRate() {
+      const rate = this.getSortLeaders.findIndex(x => x.score < this.score)
+      return -1 < rate ? rate : this.getSortLeaders.length
+    },
+
+    isResultInTop() {
+      console.log(this.yourRate, this.yourRate < 10);
+      return this.yourRate < 10
+    },
+
+    betweenLeaders() {
+      return this.getSortLeaders.slice(this.yourRate - 1, this.yourRate + 1)
+    },
   },
   methods: {
-    ...mapActions('leaderBoard', ['getLeaders', 'addLeader']),
+    ...mapActions('leaderBoard', ['getLeaders']),
     ...mapMutations('game', ['setIsLeaderBoardOpened']),
-
-    saveResult() {
-      const text = this.inputText.replace(/[^a-z 0-9]/gi, '')
-      if (!text.trim()) return
-
-      this.addLeader({user: text, score: this.score})
-        .then(this.getLeaders)
-    },
 
     closeLeaderBoard() {
       this.setIsLeaderBoardOpened(false)
@@ -128,10 +142,10 @@ export default {
 
     .result {
       span:first-child {
-        width: 3em;
+        width: 2em;
         color: $color-12;
         display: inline-block;
-        text-align: right;
+        text-align: left;
       }
     }
 
@@ -139,40 +153,14 @@ export default {
       width: 100%;
       padding: 1em;
     }
+
+    .leader-board-form {
+      margin: 1em 0;
+    }
   }
 
-  .your-score {
-    text-align: center;
-    color: $color-12;
+  .leader-board-form {
     margin: 5em auto;
-    font-weight: bold;
-    display: block;
-
-    input {
-      min-width: 16em;
-      margin: 0 2em;
-      outline: none;
-      padding: 6px 8px;
-      border-radius: 3px;
-      border: none;
-      box-shadow: 0 4px 10px 2px #000;
-      font-size: 1.2em;
-    }
-
-    @media (max-width: $mq-phone) {
-      margin-top: 2em;
-
-      > span {
-        display: block;
-        margin: 1em 0;
-      }
-    }
-  }
-
-  .save-result {
-    display: block;
-    max-width: 12em;
-    margin: 3em auto;
   }
 
   .close-spinner {

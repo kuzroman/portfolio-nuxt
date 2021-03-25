@@ -1,29 +1,34 @@
 import axios from 'axios'
+const defaultIsSent = false
 
 const apiGetAllLeaders = '/api/users/getAll'
 const apiAddLeader = '/api/users/add'
 
 export const state = () => ({
     leaders: [],
-    isSent: false
+    isSent: defaultIsSent
 })
 
 export const getters = {
     leaders: (state) => state.leaders,
     isSent: (state) => state.isSent,
-    getSortLeaders: (state) =>
-        [...state.leaders].sort((a, b) => b.score - a.score),
+    getSortLeaders: (state) => {
+        return [...state.leaders]
+            .sort((a, b) => b.score - a.score)
+            .map((x, i) => ({...x,...{rate: i}}))
+    },
 }
 
 export const mutations = {
-    addLeader(state, leader) {
-        state.leaders.push(leader)
-    },
-    addLeaders(state, leaders) {
+    fetchLeaders(state, leaders) {
         state.leaders = leaders
     },
     setIsSent(state, bool) {
         state.isSent = bool
+    },
+
+    resetStateLeaderBoard(state) {
+        state.isSent = defaultIsSent
     },
 }
 
@@ -32,13 +37,13 @@ export const actions = {
         return fetch(apiGetAllLeaders)
             .then((response) => response.json())
             .then((leaders) => {
-                commit('addLeaders', leaders)
+                commit('fetchLeaders', leaders)
             })
     },
     addLeader({commit}, data) {
         return axios.post(apiAddLeader, data)
             .then(function (response) {
-                // console.log(response);
+                console.log(response, data);
                 commit('setIsSent', true)
             })
             .catch(function (error) {

@@ -30,11 +30,4 @@ export default {
         },
         {path: "/api", handler: "~/server-middleware/api-server.js"}
     ],
-    modules: [
-        // '@nuxtjs/style-resources',
-
-        //     ['@nuxt/http', {
-        //         baseURL: 'https://api.nuxtjs.dev/'
-        //     }]
-    ],
 }

@@ -73,11 +73,13 @@ export default {
       'increaseShoots',
       'increaseDamage',
     ]),
+    ...mapMutations('leaderBoard', ['resetStateLeaderBoard',]),
 
     forceUpdateComponent() {
       this.mainGameKey += 1
     },
     restartGame() {
+      this.resetStateLeaderBoard()
       this.resetStateGame()
       this.forceUpdateComponent()
       audioBg.destroy()

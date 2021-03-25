@@ -9,7 +9,6 @@
       </div>
     </div>
     <UI_Loader_line class="loader-Line" :percent="health"/>
-<!--    <div class="leaders" @click="openLeaderBoard">leaderboard</div>-->
     <UILink2Move
         class="leaders"
         text="leaderboard"
@@ -84,7 +83,6 @@ export default {
     },
 
     openLeaderBoard() {
-      console.log(1);
       this.setIsLeaderBoardOpened(true)
     }
   },

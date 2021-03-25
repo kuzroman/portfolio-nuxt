@@ -26,7 +26,11 @@
       </div>
     </DashedList>
 
-    <UIButton text="show leaderboard" class="btn-leaderboard" />
+    <UIButton
+        text="show leaderboard"
+        class="btn-leaderboard"
+        @click.native="openLeaderBoard"
+    />
   </div>
 </template>
 
@@ -75,7 +79,11 @@ export default {
     },
   },
   methods: {
-    ...mapMutations('game', ['setScore']),
+    ...mapMutations('game', ['setScore','setIsLeaderBoardOpened']),
+
+    openLeaderBoard() {
+      this.setIsLeaderBoardOpened(true)
+    },
   },
 }
 </script>

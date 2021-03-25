@@ -1,52 +1,64 @@
 {
   "leaders": [
     {
-      "user": "Some",
-      "score": 10
+      "user": "sd1",
+      "score": 200
     },
     {
-      "user": "Some",
-      "score": 100
+      "user": "assd",
+      "score": 90
     },
     {
-      "user": "sdsd1",
-      "score": 110
+      "user": "first",
+      "score": 9999
     },
     {
-      "user": "<script>location.reload()</script>",
-      "score": 12
+      "user": "q",
+      "score": 45
     },
     {
-      "user": "",
-      "score": 102
+      "user": "w",
+      "score": 45
     },
     {
-      "user": "s ",
-      "score": 102
+      "user": "we",
+      "score": 45
     },
     {
-      "user": "sdsd sdsd",
-      "score": 102
+      "user": "sdfsfsdf dfsdfd",
+      "score": 45
     },
     {
-      "user": "sd",
-      "score": 102
+      "user": "asdasd",
+      "score": 45
     },
     {
-      "user": "sdsd",
-      "score": 102
+      "user": "xcv",
+      "score": 45
     },
     {
-      "user": "sd",
-      "score": 102
+      "user": "sdscv",
+      "score": 45
     },
     {
-      "user": "sdv",
-      "score": 102
+      "user": "asdasd",
+      "score": 45
     },
     {
-      "user": "asd",
-      "score": 102
+      "user": "xcv",
+      "score": 45
+    },
+    {
+      "user": "sdscv",
+      "score": 45
+    },
+    {
+      "user": "sss",
+      "score": 4568
+    },
+    {
+      "user": "Roman",
+      "score": 16587
     }
   ]
 }
