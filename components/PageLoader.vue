@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/styles/props.scss';
+@import '/assets/styles/props.scss';
 
 .page-loader {
   $size: 150px;

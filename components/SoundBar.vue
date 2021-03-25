@@ -2,6 +2,7 @@
   <UiSoundBar
     class="sound-bar"
     :isActive="isActive"
+    :class="stateClass"
     @click.native="switchPlayPause"
   />
 </template>
@@ -10,30 +11,53 @@
 import UiSoundBar from './UI/SoundBar.vue'
 import backgroundMusic from '../assets/media/backgroundSite.mp3'
 import CustomAudio from './abstractions/Audio'
+import {mapGetters} from "vuex";
 let audioBG
 
 export default {
   name: 'SoundBar',
   components: { UiSoundBar },
+
   data() {
     return {
       isActive: false,
     }
   },
-  methods: {
-    switchPlayPause() {
-      if (audioBG.isPlaying()) {
-        audioBG.pause()
-        this.isActive = false
-      } else {
-        audioBG.play()
-        this.isActive = true
-      }
+
+  watch: {
+    isGameReady(isTrue) {
+      isTrue && this.stop()
+    }
+  },
+
+  computed: {
+    ...mapGetters('game', ['isGameReady']),
+
+    stateClass() {
+      return this.isGameReady ? 'hide' : ''
     },
   },
-  mounted() {
-    audioBG = new CustomAudio(backgroundMusic)
+
+  methods: {
+    switchPlayPause() {
+      audioBG.isPlaying() ? this.stop() : this.play()
+    },
+
+    play() {
+      audioBG.play()
+      this.isActive = true
+    },
+
+    stop() {
+      audioBG.pause()
+      this.isActive = false
+    }
   },
+
+  mounted() {
+    audioBG = new CustomAudio(backgroundMusic, true)
+  },
+
   destroyed() {
     audioBG.destroy()
   },
@@ -45,5 +69,11 @@ export default {
   position: absolute;
   top: 1.6em;
   right: 10em;
+  transform: translateY(0);
+  transition: transform .3s;
+
+  &.hide {
+    transform: translateY(-10em);
+  }
 }
 </style>

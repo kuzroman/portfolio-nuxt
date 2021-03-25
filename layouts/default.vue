@@ -120,7 +120,7 @@ export default {
   }
 
   .view {
-    padding: 0 20%;
+    padding: 0 10%;
     margin: auto;
     display: flex;
     flex-direction: column;
