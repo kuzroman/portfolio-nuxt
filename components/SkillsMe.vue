@@ -30,11 +30,14 @@ export default {
   .knowledge {
     color: $color-12;
     background: $color-1;
-    margin: 2.5em 0;
-    display: flex;
-    justify-content: space-between;
+    margin: .4em 0.4em;
     box-shadow: 0 3px 9px 0 #000000c9;
     transition: color .3s, background .3s;
+    display: inline-block;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &:hover {
       color: lighten($color-12,10%);
@@ -44,10 +47,12 @@ export default {
     .main {
       padding: .8em;
       font-weight: bold;
+      display: inline-block;
     }
 
     .general {
       padding: .8em;
+      display: inline-block;
 
       > div {
         display: inline-block;

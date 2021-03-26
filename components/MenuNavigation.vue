@@ -13,7 +13,7 @@
 
 <script>
 import {mapGetters, mapMutations} from 'vuex'
-import UILink2Move from '~/components/UI/Link2Move.vue'
+import UILink2Move from '/components/UI/Link2Move.vue'
 
 export default {
   name: 'MenuNavigation',

@@ -42,6 +42,7 @@ export default {
       'isSiteFirstLoaded',
       'isPageLoaderHide',
     ]),
+
     ...mapGetters('game', ['isGameReady']),
 
     routes() {
@@ -89,6 +90,12 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    color: $color-12;
+
+    .view {
+      width: 100%;
+      height: 100%;
+    }
 
     &-arrow {
       display: flex;
@@ -120,11 +127,8 @@ export default {
   }
 
   .view {
-    padding: 0 10%;
+    padding: 0 15%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: $color-9;
     position: absolute;
   }

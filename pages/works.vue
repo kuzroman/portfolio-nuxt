@@ -1,16 +1,24 @@
 <template>
   <div class="works">
-    <h1>Works</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum
-      eius eligendi eos id magni, obcaecati optio qui, sapiente sint sunt
-      tenetur vel voluptates? Aperiam distinctio esse eveniet explicabo
-      veritatis?
-    </p>
+
+    <div class="header">
+      <h1>Works</h1>
+    </div>
+
+    <div class="scroll-y">
+
+      <p class="pt1 pb1">
+        This is not full list, but most frequently used knowledge
+      </p>
+
+    </div>
+
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: 'PageWorks',
 
@@ -19,15 +27,17 @@ export default {
     mode: ''
   },
 
-  mounted() {},
-  computed: {},
+  head() {
+    return {
+      title: 'front-end developer skills',
+      meta: []
+    }
+  },
 }
 </script>
 
 <style lang="scss">
 .works {
-  width: 100%;
-  height: 100%;
-  //background: #42b983;
+
 }
 </style>

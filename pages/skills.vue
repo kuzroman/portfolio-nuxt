@@ -2,10 +2,15 @@
   <div class="skills">
 
     <div class="header">
-      <h1>Front-end skills</h1>
+      <h1>Skills</h1>
     </div>
 
     <div class="scroll-y">
+
+      <p class="pt1 pb1">
+        This is not full list, but most frequently used knowledge
+      </p>
+
       <SkillsMe/>
     </div>
 
@@ -24,34 +29,21 @@ export default {
     mode: ''
   },
 
-  data() {
-    return {}
-  },
-
   methods: {},
   mounted() {},
   computed: {},
+
+  head() {
+    return {
+      title: 'front-end developer skills',
+      meta: []
+    }
+  },
 }
 </script>
 
 <style lang="scss">
-
-.scroll-y {
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
-.scroll-y::-webkit-scrollbar { /* WebKit */
-  width: 0;
-  height: 0;
-}
-
 .skills {
-  width: 100%;
-  height: 100%;
 
-  .header {
-    margin: 2em 0 0;
-  }
 }
 </style>

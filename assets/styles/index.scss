@@ -14,3 +14,31 @@ body {
   color: $color-10;
   overflow: hidden;
 }
+
+.header {
+  margin: 2em 0;
+}
+
+.scroll-y {
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.scroll-y::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.pt1 {
+  padding-top: 1em;
+}
+.pb1 {
+  padding-bottom: 1em;
+}
+.mt1 {
+  margin-top: 1em;
+}
+.mb1 {
+  margin-bottom: 1em;
+}

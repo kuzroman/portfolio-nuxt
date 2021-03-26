@@ -17,6 +17,7 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@nuxtjs/router-extras": "^1.1.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "fibers": "^5.0.0",

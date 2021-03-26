@@ -3,7 +3,7 @@
   "Framework": ["Vue.js","Nuxt.js"],
   "FileManager": ["Npm", "Yarn", "Bower"],
   "Library": ["Lodash", "Underscore" ,"JQuery","JQuery UI"],
-  "HTTP": ["Axios", "Fetch", "XHR"],
+  "Protocol": ["HTTP", "WebSocket"],
   "Bundler": ["Webpack","Browserify"],
   "Compiler": ["Babel", "Sass", "Less", "PostCss"],
   "VersionControl": ["Git"],

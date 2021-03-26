@@ -30,4 +30,7 @@ export default {
         },
         {path: "/api", handler: "~/server-middleware/api-server.js"}
     ],
+    buildModules: [
+        '@nuxtjs/router-extras',
+    ]
 }
