@@ -21,7 +21,6 @@
 import SkillsMe from "../components/SkillsMe";
 
 export default {
-  name: 'PageSkills',
   components: {SkillsMe},
 
   transition: {

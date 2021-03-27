@@ -133,33 +133,35 @@ export default {
     position: absolute;
   }
 
+  $speed: .6s;
+
   .to-left {
     &.fade-leave-active {
-      animation: rotateNextLeave 0.6s forwards;
+      animation: rotateNextLeave $speed forwards;
     }
 
     &.fade-enter-active {
-      animation: rotateNextEnter 0.6s forwards;
+      animation: rotateNextEnter $speed forwards;
     }
   }
 
   .to-right {
     &.fade-leave-active {
-      animation: rotatePrevLeave 0.6s forwards;
+      animation: rotatePrevLeave $speed forwards;
     }
 
     &.fade-enter-active {
-      animation: rotatePrevEnter 0.6s forwards;
+      animation: rotatePrevEnter $speed forwards;
     }
   }
 
   .fade-leave-active {
     z-index: $zIndex-1;
-    animation: rotateNextLeave 0.6s forwards;
+    animation: rotateNextLeave $speed forwards;
   }
 
   .fade-enter-active {
-    animation: rotateNextEnter 0.6s forwards;
+    animation: rotateNextEnter $speed forwards;
   }
 
   .first-loaded {

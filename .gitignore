@@ -1,4 +1,6 @@
 .idea
 node_modules
 .nuxt
-assets/img/portfolio
+/assets/works/
+/tests/
+/assets/img/portfolio/

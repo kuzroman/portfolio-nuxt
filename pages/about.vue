@@ -51,7 +51,6 @@
 import UILink2Move from '/components/UI/Link2Move.vue'
 
 export default {
-  name: 'PageContacts',
   components: { UILink2Move },
 
   transition: {

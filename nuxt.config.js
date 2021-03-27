@@ -15,7 +15,12 @@ export default {
     head: {
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '~/static/favicon.ico'}
-        ]
+        ],
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial scale=1' },
+            // { hid: 'description', name: 'description', content: 'Meta description' }
+        ],
     },
     serverMiddleware: [
         {path: "/api", handler: require("body-parser").json()},
