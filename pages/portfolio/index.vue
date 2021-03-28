@@ -4,20 +4,22 @@
     <div class="scroll-y">
 
       <div class="header">
-        <h1>Portfolio</h1>
+        <h1>Portfolio {{ $route.params.id }}</h1>
       </div>
 
       <div class="works">
 
-        <div v-for="work in works"
-             class="work"
-             :style="{'background-image': `url(${getBg(work, '0')})`}">
-          <div class="work-date">{{ work.date }}</div>
-          <div class="work-desc">
-            <div v-for="skill in work.skills">{{ skill }}</div>
+        <NuxtLink v-for="(work, i) in works" :to="{ path: `portfolio/${i}`}" :key="i">
+          <div
+              class="work"
+              :style="{'background-image': `url(${getBg(work, '0')})`}">
+            <div class="work-date">{{ work.date }}</div>
+            <div class="work-desc">
+              <div v-for="skill in work.skills">{{ skill }}</div>
+            </div>
+            <div class="work-logo" :style="{'background-image': `url(${getBg(work, 'logo')})`}"></div>
           </div>
-          <div class="work-logo" :style="{'background-image': `url(${getBg(work, 'logo')})`}"></div>
-        </div>
+        </NuxtLink>
 
       </div>
 
@@ -33,7 +35,7 @@ export default {
 
   data() {
     return {
-      works: require('/db/works.json')
+      works: require('/db/works.js')
     }
   },
 
@@ -41,7 +43,7 @@ export default {
 
     getBg(work, name) {
       const type = name === 'logo' ? '.png' : '.jpg'
-      return require(`~/assets/works/gallery/${work.href}/${name + type}`)
+      return require(`~/assets/works/gallery/${work.name}/${name + type}`)
     },
   },
 
@@ -52,7 +54,7 @@ export default {
 
   head() {
     return {
-      title: 'front-end developer skills',
+      title: 'front-end developer portfolio description',
       meta: []
     }
   },

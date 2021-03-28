@@ -1,6 +1,6 @@
 [
   {
-    "href": "kuzroman",
+    "name": "kuzroman",
     "nameTitle": "Portfolio",
     "nameCompany": "Kuznetsov Roman",
     "descCompany": "",
@@ -11,7 +11,7 @@
     "link": ""
   },
   {
-    "href": "cash-rbc",
+    "name": "cash-rbc",
     "nameTitle": "Exchange Rate Lookup",
     "nameCompany": "Ros Business Consulting",
     "descCompany": "The RBC Group operates on the mass media (an information agency, business television channel RBC TV, online newspapers, and marketing communications) and IT (RBC SOFT) markets.",
@@ -22,18 +22,18 @@
     "link": "https://cash.rbc.ru/cash/"
   },
   {
-    "href": "anywayanyday",
+    "name": "anywayanyday",
     "nameTitle": "Best fares",
     "nameCompany": "Anywayanyday",
     "descCompany": "International online travel Agency. Service offices are open in Ukraine, Germany, USA and Switzerland",
     "numberImg": 4,
-    "descDeal": "<i>Worked 3 months in a large team of great professionals.</i><hr><p>Developed a module searching for the best rates.<ul><li>Search filter</li><li>Dynamics of prices</li><li>Subscribe to the best prices</li></ul></p>",
+    "descDeal": "<i>Worked in large team of great professionals.</i><p>Developed a module searching for the best rates.<ul><li>Search filter</li><li>Dynamics of prices</li><li>Subscribe to the best prices</li></ul></p>",
     "skills": ["HTML","CSS3","JavaScript","jQuery", "AJAX", "JSON, JSONP", "Require.js", "Git", "Photoshop", "Responsive Website Design"],
     "date": 2012,
     "link": "http://www.anywayanyday.com/"
   },
   {
-    "href": "private-banking-platinum",
+    "name": "private-banking-platinum",
     "nameTitle": "Private banking landing page",
     "nameCompany": "Bank of Moscow",
     "descCompany": "Russian Bank providing banking services to both legal entities and individuals",
@@ -44,7 +44,7 @@
     "link": ""
   },
   {
-    "href": "private-banking",
+    "name": "private-banking",
     "nameTitle": "Private banking",
     "nameCompany": "Bank of Moscow",
     "descCompany": "Russian Bank providing banking services to both legal entities and individuals",
@@ -55,7 +55,7 @@
     "link": ""
   },
   {
-    "href": "bm-mobile",
+    "name": "bm-mobile",
     "nameTitle": "Mobile version",
     "nameCompany": "Bank of Moscow",
     "descCompany": "Russian Bank providing banking services to both legal entities and individuals",
@@ -66,7 +66,7 @@
     "link": "http://m.bm.ru/"
   },
   {
-    "href": "tretyakov-gallery",
+    "name": "tretyakov-gallery",
     "nameTitle": "Landing page",
     "nameCompany": "Bank of Moscow & Tretyakov State Gallery<br>a joint project",
     "descCompany": "Russian Bank providing banking services to both legal entities and individuals<br>The State Tretyakov Gallery possesses a unique collection of Russian art which includes masterpieces which span a period of a thousand years.",
@@ -77,7 +77,7 @@
     "link": "http://www.bm.ru/ru/private/tretjakovskaja-galereja/"
   },
   {
-    "href": "cash-back-calc",
+    "name": "cash-back-calc",
     "nameTitle": "Calculators, transfers, services",
     "nameCompany": "Bank of Moscow",
     "descCompany": "Russian Bank providing banking services to both legal entities and individuals",
@@ -88,7 +88,7 @@
     "link": "https://www.bm.ru/ru/personal/platezhi-i-perevody/perevody-s-kart/perevody-s-karty-na-karty/"
   },
   {
-    "href": "boulevard",
+    "name": "boulevard",
     "nameTitle": "Creative agency",
     "nameCompany": "Advertising boulevard",
     "descCompany": "Strategic marketing, creative development and production",

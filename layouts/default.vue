@@ -9,13 +9,13 @@
 
       <Nuxt  class="view" :class="routeStyles" />
 
-      <div class="content-arrow left" :class="{ hide: isGameReady }">
+      <div class="content-arrow left" v-if="showArrow" :class="{ hide: isGameReady }">
         <a @click="toPage({ route: prevRoute, direction: 'to-left' })">
           <PageControl direction="left" :text="prevRoute.name" />
         </a>
       </div>
 
-      <div class="content-arrow right" :class="{ hide: isGameReady }">
+      <div class="content-arrow right" v-if="showArrow" :class="{ hide: isGameReady }">
         <a @click="toPage({ route: nextRoute, direction: 'to-right' })">
           <PageControl direction="right" :text="nextRoute.name" />
         </a>
@@ -61,6 +61,9 @@ export default {
     },
     currentRouteIndex() {
       return this.routes.findIndex((x) => x.path === this.$route.path)
+    },
+    showArrow () {
+      return !this.$route.params.id
     },
     prevRoute() {
       return this.currentRouteIndex === 0

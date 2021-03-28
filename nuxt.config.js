@@ -37,5 +37,6 @@ export default {
     ],
     buildModules: [
         '@nuxtjs/router-extras',
+        '@nuxtjs/vuetify',
     ]
 }
