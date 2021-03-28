@@ -41,15 +41,18 @@ export default {
       'transitionDirection',
       'isSiteFirstLoaded',
       'isPageLoaderHide',
+      'navigation',
     ]),
 
     ...mapGetters('game', ['isGameReady']),
 
     routes() {
-      return this.$router.options.routes
+      // return this.$router.options.routes
+      return this.navigation
     },
     routesLen() {
-      return this.routes.length
+      // return this.routes.length
+      return this.navigation.length
     },
     routeStyles() {
       let styles = []
@@ -59,8 +62,11 @@ export default {
       }
       return styles
     },
+    currentPath() {
+      return this.$route.path
+    },
     currentRouteIndex() {
-      return this.routes.findIndex((x) => x.path === this.$route.path)
+      return this.routes.findIndex((x) => x.path === this.currentPath)
     },
     showArrow () {
       return !this.$route.params.id
@@ -78,8 +84,18 @@ export default {
   },
 
   methods: {
-    ...mapMutations('app', ['toPage']),
+    ...mapMutations('app', ['toPage', 'setNavigation']),
   },
+
+  // hook for server & client!
+  created() {
+    let navigation = []
+    this.$router.options.routes.forEach(x => {
+      let split = x.name.split('-id')
+      if (split[1] !== '') navigation.push(x)
+    })
+    this.setNavigation(navigation)
+  }
 }
 </script>
 

@@ -7,6 +7,7 @@ export const state = () => ({
   isActiveBurger: false,
   transitionDirection: '', // to-left || to-right
   isPageLoaderHide: true, // true - disable PageLoader.vue
+  navigation: []
 })
 
 export const getters = {
@@ -16,6 +17,7 @@ export const getters = {
   transitionDirection: (state) => state.transitionDirection,
   hidePageControl: (state) => state.hidePageControl,
   isPageLoaderHide: (state) => state.isPageLoaderHide,
+  navigation: (state) => state.navigation,
 }
 
 export const mutations = {
@@ -50,6 +52,9 @@ export const mutations = {
   },
   setIsPageLoaderHide(state, bool) {
     state.isPageLoaderHide = bool
+  },
+  setNavigation(state, arr) {
+    state.navigation = arr
   },
 }
 
