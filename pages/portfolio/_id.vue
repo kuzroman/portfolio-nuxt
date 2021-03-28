@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio">
+  <div class="portfolio-id">
 
     <div class="scroll-y">
 
@@ -47,9 +47,6 @@ export default {
     projectName() {
       return this.work.name
     },
-    // numberImages() {
-    //   return this.work.numberImg
-    // },
     images() {
       return [...Array(this.work.numberImg)].map((x, i) => ({
         src: require(`/assets/img/portfolio/gallery/${this.projectName}/${i+1}.jpg`)
@@ -77,7 +74,7 @@ export default {
 <style lang="scss">
 @import "/assets/styles/props";
 
-.portfolio {
+.portfolio-id {
 
   .row {
     margin: 0;

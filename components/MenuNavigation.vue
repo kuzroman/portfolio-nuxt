@@ -23,7 +23,12 @@ export default {
     ...mapGetters('app', ['isMenuNavigationOpened']),
 
     routes() {
-      return this.$router.options.routes
+      let navigation = [];
+      this.$router.options.routes.forEach(x => {
+        let splited = x.name.split('-id')
+        if (splited[1] !== '') navigation.push(x)
+      })
+      return navigation;
     },
   },
   methods: {

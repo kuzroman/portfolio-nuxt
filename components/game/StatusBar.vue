@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       health: healthDefault,
-      isDebug: true,
+      isDebug: false,
     }
   },
   watch: {
@@ -96,7 +96,7 @@ export default {
   position: absolute;
   top: 1em;
   left: 2em;
-  transform: translateY(-5em);
+  transform: translateY(-10em);
   transition: transform 0.3s;
 
   & .score,
