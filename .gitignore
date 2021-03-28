@@ -6,4 +6,4 @@ node_modules
 /assets/img/portfolio.zip
 package-lock.json
 yarn.lock
-leaderboard.json
+db/leaderboard.json

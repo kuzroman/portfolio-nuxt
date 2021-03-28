@@ -76,6 +76,7 @@ export default {
     border: none;
     box-shadow: 0 4px 10px 2px #000;
     font-size: 1.2em;
+    color: $color-12;
   }
 
   @media (max-width: $mq-phone) {
