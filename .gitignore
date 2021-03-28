@@ -1,9 +1,9 @@
 .idea
 node_modules
 .nuxt
-/assets/works/
 /tests/
 /assets/img/portfolio/
+/assets/img/portfolio.zip
 package-lock.json
 yarn.lock
 leaderboard.json

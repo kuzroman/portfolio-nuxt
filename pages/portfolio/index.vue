@@ -43,7 +43,7 @@ export default {
 
     getBg(work, name) {
       const type = name === 'logo' ? '.png' : '.jpg'
-      return require(`~/assets/works/gallery/${work.name}/${name + type}`)
+      return require(`~/assets/img/portfolio/gallery/${work.name}/${name + type}`)
     },
   },
 
