@@ -1,5 +1,5 @@
 <template>
-  <a class="link-move" :href="href" :target="target">
+  <a class="ui-link-move" :href="href" :target="target">
     <span>{{ text }}</span>
   </a>
 </template>
@@ -18,7 +18,7 @@ export default {
 <style lang="scss">
 @import "/assets/styles/props.scss";
 
-.link-move {
+.ui-link-move {
   display: flex;
   justify-content: center;
   align-items: center;

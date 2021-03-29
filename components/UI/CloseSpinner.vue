@@ -1,5 +1,5 @@
 <template>
-  <div class="close-spinner"></div>
+  <div class="ui-close-spinner"></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="scss">
-.close-spinner {
+.ui-close-spinner {
   width: 30px;
   height: 30px;
   position: absolute;

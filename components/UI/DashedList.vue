@@ -1,5 +1,5 @@
 <template>
-  <div class="dashed-list">
+  <div class="ui-dashed-list">
     <slot
       ><!--
       Example
@@ -37,7 +37,7 @@ export default {}
 <style lang="scss">
 @import './_props.scss';
 
-.dashed-list {
+.ui-dashed-list {
   .result {
     display: flex;
     justify-content: space-between;

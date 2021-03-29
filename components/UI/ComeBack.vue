@@ -1,5 +1,5 @@
 <template>
-  <div class="come-back">
+  <div class="ui-come-back">
     <i></i>
     <i></i>
     <i></i>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 @import './_props.scss';
 
-.come-back {
+.ui-come-back {
   width: 28px;
   height: 28px;
   cursor: pointer;
