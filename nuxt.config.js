@@ -11,6 +11,9 @@ export default {
                 }
             })
         },
+        extractCSS: {
+            ignoreOrder: false
+        }
     },
     head: {
         link: [
