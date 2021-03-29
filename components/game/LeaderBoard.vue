@@ -2,7 +2,7 @@
   <div class="leader-board" :class="state">
     <h2 class="title">Leader Board</h2>
 
-    <DashedList>
+    <DashedList class="dashed-list">
       <template v-for="(leader, i) in top10Leaders">
 
         <LeaderBoardForm
@@ -20,7 +20,7 @@
       </template>
     </DashedList>
 
-    <DashedList v-if="!isResultInTop">
+    <DashedList class="dashed-list" v-if="!isResultInTop">
       <template v-for="(leader, i) in betweenLeaders">
 
         <LeaderBoardForm
@@ -44,7 +44,7 @@
         @leader-board-form--save-result="getLeaders"
     />
 
-    <CloseSpinner @click.native="closeLeaderBoard"/>
+    <CloseSpinner class="close-spinner" @click.native="closeLeaderBoard"/>
   </div>
 </template>
 

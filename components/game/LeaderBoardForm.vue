@@ -76,7 +76,13 @@ export default {
     border: none;
     box-shadow: 0 4px 10px 2px #000;
     font-size: 1.2em;
-    color: $color-12;
+    color: white;
+    background: $color-10;
+
+    &::placeholder {
+      color: darken(white, 10%);
+      opacity: 1;
+    }
   }
 
   @media (max-width: $mq-phone) {
