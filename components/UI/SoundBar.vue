@@ -21,7 +21,6 @@ export default {
   height: 28px;
   position: relative;
   cursor: pointer;
-  z-index: $zIndex-2;
   transition: 0.3s;
   background: #2f2f2f;
 

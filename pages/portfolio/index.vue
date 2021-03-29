@@ -43,7 +43,7 @@ export default {
 
     getBg(work, name) {
       const type = name === 'logo' ? '.png' : '.jpg'
-      return require(`~/assets/img/portfolio/gallery/${work.name}/${name + type}`)
+      return require(`~/assets/img/portfolio/gallery/${work.imageDirectory}/${name + type}`)
     },
   },
 
@@ -66,14 +66,15 @@ export default {
 
 .portfolio {
 
+
   .works {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     .work {
-      width: 15em;
-      height: 15em;
+      width: 300px;
+      height: 250px;
       margin: 1em;
       position: relative;
       overflow: hidden;

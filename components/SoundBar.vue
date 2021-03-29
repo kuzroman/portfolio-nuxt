@@ -55,7 +55,7 @@ export default {
   },
 
   mounted() {
-    audioBG = new CustomAudio(backgroundMusic, true)
+    audioBG = new CustomAudio(backgroundMusic, 1,true)
   },
 
   destroyed() {
@@ -65,12 +65,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import "/assets/styles/props";
+
 .sound-bar {
   position: absolute;
   top: 1.6em;
-  right: 10em;
+  left: 2em;
   transform: translateY(0);
   transition: transform .3s;
+  z-index: $zIndex-2;
 
   &.hide {
     transform: translateY(-10em);

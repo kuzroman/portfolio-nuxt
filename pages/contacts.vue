@@ -1,11 +1,11 @@
 <template>
   <div class="contacts">
 
-    <div class="header">
-      <h1>Contacts</h1>
-    </div>
-
     <div class="scroll-y">
+
+      <div class="header">
+        <h1>Contacts</h1>
+      </div>
 
       <div class="pt1 pb1">
         <p>Currently I'm located in Russia, village suburbs near Moscow. (GMT+3)</p>

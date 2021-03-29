@@ -37,7 +37,6 @@ export default {
 
 .ui-icon-burger {
   cursor: pointer;
-  padding: 5px 4px;
 
   & > i {
     display: block;

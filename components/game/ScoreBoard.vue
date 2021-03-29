@@ -103,7 +103,7 @@ export default {
   left: 50%;
   top: 50%;
   height: 20em;
-  transform: translate(-50%, 200%);
+  transform: translate(-50%, -300%);
   transition: 0.3s transform;
   z-index: $zIndex-2;
 

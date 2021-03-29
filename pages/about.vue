@@ -1,11 +1,11 @@
 <template>
   <div class="about">
 
-    <div class="header">
-      <h1>About</h1>
-    </div>
-
     <div class="scroll-y">
+
+      <div class="header">
+        <h1>About</h1>
+      </div>
 
       <p class="pt1 pb1">Professional Front-end web developer with more 10 years old experience<br>
         Highly skilled at JavaScript including SPA, SSR, MVVM flux patterns.

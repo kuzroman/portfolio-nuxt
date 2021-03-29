@@ -4,10 +4,12 @@
     <div class="scroll-y">
 
       <div class="header">
-        <h1>{{ work.nameCompany}} - {{ work.nameTitle }}</h1>
+        <h1>{{ work.nameCompany}}</h1>
+        <div v-if="work.nameTitle">{{ work.nameTitle }}</div>
+        <div v-if="work.descCompany">{{work.descCompany}}</div>
       </div>
 
-      <v-app id="inspire">
+      <v-app class="carousel">
         <v-carousel height="510" hide-delimiter-background show-arrows-on-hover>
           <v-carousel-item v-for="(image, i) in images" :key="i">
             <v-sheet height="100%">
@@ -19,10 +21,21 @@
         </v-carousel>
       </v-app>
 
-      <div
-          class="desc"
-          v-html="work.descDeal"
-      />
+      <div class="description">
+
+        <div v-if="work.link" class="link">
+          <a :href="work.link" target="_blank">Watch project</a>
+        </div>
+
+        <div
+            class="desc"
+            v-html="work.descDeal"
+        />
+
+        <div class="skills">
+          <div class="skill" v-for="skill in work.skills">{{ skill }}</div>
+        </div>
+      </div>
 
     </div>
 
@@ -30,9 +43,11 @@
 </template>
 
 <script>
-export default {
+import UILink2Move from '~/components/UI/Link2Move.vue'
 
-  // vuetify: new Vuetify(),
+export default {
+  components: {UILink2Move},
+
   data() {
     return {
       works: require('/db/works.js'),
@@ -45,7 +60,7 @@ export default {
       return this.works[this.$route.params.id];
     },
     projectName() {
-      return this.work.name
+      return this.work.imageDirectory
     },
     images() {
       return [...Array(this.work.numberImg)].map((x, i) => ({
@@ -75,26 +90,27 @@ export default {
 @import "/assets/styles/props";
 
 .portfolio-id {
+  line-height: 2;
 
   .row {
     margin: 0;
   }
   .theme--light.v-application{
     max-width: fit-content;
-    margin: 0 auto;
+    margin: 1em auto 2em;
   }
   .v-application--wrap {
     min-height: auto;
   }
 
   .header {
-    max-width: 840px;
+    max-width: $maxWidth1;
     margin: 2em auto;
   }
 
   .desc {
-    max-width: 840px;
-    margin: 3em auto;
+    max-width: $maxWidth1;
+    margin: 0 auto 3em;
   }
 
   a {
@@ -105,6 +121,32 @@ export default {
       color: lighten($color-12, 10%);
     }
   }
+
+  .description {
+    max-width: $maxWidth1;
+    margin: 0 auto;
+
+    .link {
+      margin: 1em 0;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .skills {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      .skill {
+        margin: 10px;
+        padding: 4px 6px;
+        background: $color-7;
+      }
+    }
+  }
+
+
 
 }
 </style>

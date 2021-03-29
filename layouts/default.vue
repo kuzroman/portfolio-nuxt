@@ -4,6 +4,7 @@
     <MenuNavigation />
     <IconBurger />
     <SoundBar />
+    <ComeBack />
 
     <main class="content">
 
@@ -31,10 +32,11 @@ import PageLoader from '../components/PageLoader.vue'
 import MenuNavigation from '../components/MenuNavigation.vue'
 import IconBurger from '../components/IconBurger.vue'
 import SoundBar from '../components/SoundBar.vue'
+import ComeBack from '../components/ComeBack.vue'
 import PageControl from '../components/PageControl.vue'
 
 export default {
-  components: { PageLoader, IconBurger, MenuNavigation, PageControl, SoundBar },
+  components: { PageLoader, IconBurger, ComeBack, MenuNavigation, PageControl, SoundBar },
 
   computed: {
     ...mapGetters('app', [
@@ -112,8 +114,12 @@ export default {
     color: $color-12;
 
     .view {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
+      padding: 0 15%;
+      margin: auto;
+      background: $color-9;
+      position: absolute;
     }
 
     &-arrow {
@@ -143,13 +149,6 @@ export default {
         }
       }
     }
-  }
-
-  .view {
-    padding: 0 15%;
-    margin: auto;
-    background: $color-9;
-    position: absolute;
   }
 
   $speed: .6s;

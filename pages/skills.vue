@@ -1,11 +1,11 @@
 <template>
   <div class="skills">
 
-    <div class="header">
-      <h1>Skills</h1>
-    </div>
-
     <div class="scroll-y">
+
+      <div class="header">
+        <h1>Skills</h1>
+      </div>
 
       <p class="pt1 pb1">
         This is not full list, but most frequently used knowledge

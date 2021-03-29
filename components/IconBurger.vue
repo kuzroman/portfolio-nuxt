@@ -31,7 +31,7 @@ export default {
 
 .icon-burger {
   position: fixed;
-  top: 1em;
+  top: 1.2em;
   right: 2em;
   z-index: $zIndex-3;
 }
