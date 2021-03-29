@@ -82,7 +82,6 @@ export default {
     },
 
     isResultInTop() {
-      console.log(this.yourRate, this.yourRate < 10);
       return this.yourRate < 10
     },
 
