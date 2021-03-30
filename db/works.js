@@ -14,7 +14,7 @@ module.exports = [{
         nameTitle: 'CRM, Form Builder',
         nameCompany: 'Raiffeisen Bank',
         descCompany: '',
-        numberImg: 4,
+        numberImg: 8,
         descDeal: '<div>Firs experience work in Scrum + Kanban methodology in big team</div>\n' +
             '<div>Can highlight 4 directions that we did.</div>\n' +
             '<div>1 - form builder. The Core we created & maintained was main product our department. Bank form can contain 500\n' +
@@ -43,7 +43,7 @@ module.exports = [{
         nameTitle: 'RBC video player',
         nameCompany: 'Ros Business Consulting',
         descCompany: 'The RBC Group operates on the mass media (an information agency, business television channel RBC TV, online newspapers, and marketing communications) and IT (RBC SOFT) markets.',
-        numberImg: 4,
+        numberImg: 5,
         descDeal: '<p>The company want to refuse from commercial plugin with annual payment. Need to find a solution for build new video player with feature:</p><ul> <li>pre/post roll advertising</li> <li>VAST ad</li> <li>streaming HLS (online stream)</li> <li>read file with .m3u8</li> <li>quality changing menu</li> <li>all modern browsers (ie10+)</li> <li>all mobile & tablet browsers (android 4.4+, iOs7+)</li> <li>fullScreen</li> <li>include player in different place on site, in topline in small area & popup, also 2 view in content area in infinite scrolling</li> <li>to apply this solution for all projects of company rbc.ru, tv.rbc.ru, rbc.ru/newspaper, www.rbc.ru/magazine, quote.rbc.ru, autonews.ru, sport.rbc.ru, realty.rbc.ru ... </li></ul>',
         skills: ['js', 'html5', 'jQuery', 'git', 'npm', 'gulp'],
         date: 2017,
@@ -54,7 +54,7 @@ module.exports = [{
         nameTitle: 'RBC Cash',
         nameCompany: 'Ros Business Consulting',
         descCompany: 'The RBC Group operates on the mass media (an information agency, business television channel RBC TV, online newspapers, and marketing communications) and IT (RBC SOFT) markets.',
-        numberImg: 4,
+        numberImg: 7,
         descDeal: `<div>
     Cash currency market
     <div>First big project where I was hired personally for it</div>
@@ -90,7 +90,7 @@ module.exports = [{
         nameTitle: '',
         nameCompany: 'Bank of Moscow (current VTB bank)',
         descCompany: 'Russian Bank providing banking services to both legal entities and individuals',
-        numberImg: 10,
+        numberImg: 16,
         descDeal: `<div>Worked on different projects
     <div>Personal website for private clients Bank</div>
     <div>Developing mobile version main product site</div>
