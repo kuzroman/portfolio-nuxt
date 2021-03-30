@@ -43,20 +43,14 @@ export default class Seed {
   }
 
   _updateShrapnel() {
-    // if (this._isPlayer(player)) {
-    //   this.y1 = this.#ground
-    //   this.isStopped = true
-    // }
 
     if (this._isUnderGround()) {
       this.isStopped = true
       return
     }
 
-    this._fallDown(this.direction)
+    this._fallDown(this.direction, true)
   }
-
-  // _isPlayer(player) {}
 
   _isBounceLimitReached() {
     return this.#maxBounceNum < this.#bounceNum
@@ -77,20 +71,21 @@ export default class Seed {
     } else this._fallDown()
   }
 
-  _fallDown(direction = 1) {
-    this._moveX(direction)
+  _fallDown(direction, isRandomShiftX) {
+    this._moveX(direction, isRandomShiftX)
     this.y1 += Math.round(this.#gravityY)
     this.#gravityY = Math.round((this.#gravityY + this.#speed) * 100) / 100
   }
 
-  _fallUp(direction = 1) {
+  _fallUp(direction ) {
     this._moveX(direction)
     this.y1 -= Math.round(this.#gravityY)
     this.#gravityY = Math.round((this.#gravityY - 1) * 100) / 100
   }
 
-  _moveX(direction = 1) {
-    this.x1 += direction * Math.round(this.#gravityX / 7)
+  _moveX(direction = 1, isRandomShiftX = false) {
+    const shift = isRandomShiftX ? getRandomInRange(2, 8) : 7
+    this.x1 += direction * Math.round(this.#gravityX / shift)
     this.#gravityX = Math.round((this.#gravityX + this.#speed) * 100) / 100
   }
 }
