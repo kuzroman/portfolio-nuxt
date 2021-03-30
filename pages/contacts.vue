@@ -3,9 +3,7 @@
 
     <div class="scroll-y">
 
-      <div class="header">
-        <h1>Contacts</h1>
-      </div>
+      <h1 class="h1">Contacts</h1>
 
       <div class="pt1 pb1">
         <p>Currently I'm located in Russia, village suburbs near Moscow. (GMT+3)</p>

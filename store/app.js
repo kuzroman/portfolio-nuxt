@@ -4,7 +4,7 @@ export const state = () => ({
   hidePageControl: false,
   isActiveBurger: false,
   transitionDirection: '', // to-left || to-right
-  isPageLoaderHide: true, // true - disable PageLoader.vue
+  isPageLoaderHide: false, // useful in develop mode
   navigation: []
 })
 

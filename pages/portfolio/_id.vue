@@ -4,7 +4,7 @@
     <div class="scroll-y">
 
       <div class="header">
-        <h1>{{ work.nameCompany}}</h1>
+        <h1 class="h1">{{ work.nameCompany}}</h1>
         <div v-if="work.nameTitle">{{ work.nameTitle }}</div>
         <div v-if="work.descCompany">{{work.descCompany}}</div>
       </div>

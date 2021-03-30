@@ -3,9 +3,9 @@
 
     <div class="scroll-y">
 
-      <div class="header">
-        <h1>Portfolio {{ $route.params.id }}</h1>
-      </div>
+
+      <h1 class="h1">Portfolio {{ $route.params.id }}</h1>
+
 
       <div class="works">
 
