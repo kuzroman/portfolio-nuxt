@@ -32,11 +32,6 @@ export default {
     mode: ''
   },
 
-  mounted() {
-  },
-  computed: {
-  },
-
   head() {
     return {
       title: 'front-end developer contacts',

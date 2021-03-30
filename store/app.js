@@ -52,7 +52,9 @@ export const mutations = {
     state.isPageLoaderHide = bool
   },
   setNavigation(state, arr) {
-    state.navigation = arr
+    const orderList = ['game','portfolio','about','contacts']
+    const orderedNav = orderList.map(name => arr.find(x=>x.name === name))
+    state.navigation = orderedNav
   },
 }
 

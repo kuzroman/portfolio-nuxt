@@ -1,11 +1,9 @@
 <template>
-  <div class="about">
+  <div class="skills">
 
     <div class="scroll-y">
 
-      <div class="header">
-        <h1>About</h1>
-      </div>
+      <h1 class="h1">About</h1>
 
       <p class="pt1 pb1">Professional Front-end web developer with more 10 years old experience<br>
         Highly skilled at JavaScript including SPA, SSR, MVVM flux patterns.
@@ -43,57 +41,45 @@
         <div class="sub">Waterfall.</div>
       </div>
 
+      <p class="pt1 pb1">
+        This is not full list, but most frequently used knowledge
+      </p>
+
+      <h1 class="h1">Skills</h1>
+
+      <SkillsMe/>
     </div>
+
   </div>
 </template>
 
 <script>
+import SkillsMe from "/components/SkillsMe";
 import UILink2Move from '/components/UI/Link2Move.vue'
 
 export default {
-  components: { UILink2Move },
+  components: {SkillsMe,UILink2Move},
 
   transition: {
     name: 'fade',
     mode: ''
   },
 
-  mounted() {
-  },
-  computed: {
-  },
-
   head() {
     return {
-      title: 'front-end developer about',
+      title: 'front-end developer skills',
       meta: []
     }
   },
-
 }
 </script>
 
 <style lang="scss">
 @import "/assets/styles/props";
 
-.about {
+.skills {
   color: $color-12;
   line-height: 2em;
   font-size: 18px;
-
-  .sub {
-    font-size: 14px;
-    color: $color-2;
-    line-height: 0.4;
-  }
-
-  .link {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    overflow: initial;
-    color: $color-10;
-  }
-
 }
 </style>

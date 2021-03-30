@@ -2,7 +2,7 @@
   <div class="menu-navigation" :class="{ active: isMenuNavigationOpened }">
     <nav>
       <UILink2Move
-          v-for="route in routes"
+          v-for="route in navigation"
           :key="route.name"
           :text="route.name"
           @click.native="toPage({ route })"
@@ -20,16 +20,7 @@ export default {
   components: {UILink2Move},
   props: {},
   computed: {
-    ...mapGetters('app', ['isMenuNavigationOpened']),
-
-    routes() {
-      let navigation = [];
-      this.$router.options.routes.forEach(x => {
-        let splited = x.name.split('-id')
-        if (splited[1] !== '') navigation.push(x)
-      })
-      return navigation;
-    },
+    ...mapGetters('app', ['isMenuNavigationOpened', 'navigation']),
   },
   methods: {
     ...mapMutations('app', ['toPage']),
