@@ -90,6 +90,10 @@ export default {
   transform: translate(-7em, 0);
   transition: transform 0.3s;
 
+  @media (max-width: $mq-phone) {
+    display: none;
+  }
+
   &.hide {
     transform: translateY(20em);
   }

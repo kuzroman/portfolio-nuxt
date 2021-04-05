@@ -80,16 +80,8 @@ export default {
             'I am a Front-End developer with 10 years experience.|' +
             'SPA, js, Vue, HTML, sass... are my passion.|' +
             'Check this out some projects on my Work page.|' +
-            'Feel free if you want say hello at kuzroman@list.ru then do it!)'
+            'Feel free if you wanna say hello at kuzroman@list.ru then do it!)'
     },
-
-    // viewPortWidth() {
-    //   return process.client ? window.innerWidth : global.innerWidth
-    // },
-    //
-    // viewPortHeight() {
-    //   return  process.client ? window.innerHeight : global.innerHeight
-    // },
   },
 
   watch: {
@@ -192,8 +184,7 @@ export default {
           this.setIsGameFinished(true)
         }
 
-        this.canvas.drawRect(bullet.x1, bullet.y1, bullet.size, '#fc0')
-        // this.canvas.drawRing(bullet.x1, bullet.y1, bullet.size, '#fc0')
+        this.canvas.drawRing(bullet.x1, bullet.y1, bullet.size, '#fc0')
         return !bullet.isStopped
       })
     },

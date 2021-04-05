@@ -40,7 +40,7 @@ export default {
     }
 
     &:hover {
-      color: lighten($color-12,10%);
+      color: lighten($color-12, 10%);
       background: lighten($color-1, 5%);
     }
 
@@ -56,6 +56,21 @@ export default {
 
       > div {
         display: inline-block;
+        padding: 0 .4em;
+      }
+    }
+  }
+}
+
+@media (max-width: $mq-phone) {
+  .skills-me {
+    .knowledge {
+      font-size: 0.8em;
+
+      .main {
+        padding: 0 .4em;
+      }
+      .general {
         padding: 0 .4em;
       }
     }

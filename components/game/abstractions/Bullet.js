@@ -3,7 +3,7 @@ export default class Bullet {
   #ground = -20
 
   constructor(x, y) {
-    const size = 12
+    const size = 6
 
     this.x1 = x
     this.x2 = x + size

@@ -129,6 +129,11 @@ export default {
       position: absolute;
       height: 100%;
 
+      @media (max-width: $mq-phone) {
+        //z-index: $zIndex-1;
+        display: none;
+      }
+
       &.left {
         left: 2em;
         transform: translateX(0);

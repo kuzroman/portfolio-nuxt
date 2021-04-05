@@ -10,7 +10,7 @@
       </div>
 
       <v-app class="carousel">
-        <v-carousel height="510" hide-delimiter-background show-arrows-on-hover>
+        <v-carousel height="auto" hide-delimiter-background show-arrows-on-hover>
           <v-carousel-item v-for="(image, i) in images" :key="i">
             <v-sheet height="100%">
               <v-row class="fill-height" align="center" justify="center">

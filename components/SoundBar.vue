@@ -78,5 +78,10 @@ export default {
   &.hide {
     transform: translateY(-10em);
   }
+
+  @media (max-width: $mq-phone) {
+    top: .8em;
+    left: 1em;
+  }
 }
 </style>

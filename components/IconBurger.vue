@@ -36,10 +36,10 @@ export default {
   z-index: $zIndex-3;
 }
 
-@media (max-width: 481px) {
+@media (max-width: $mq-phone) {
   .icon-burger {
-    top: 2em;
-    right: 1em;
+    top: .5em;
+    right: .7em;
   }
 }
 </style>
