@@ -17,7 +17,8 @@ export default {
     },
     head: {
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '~/static/favicon.ico'}
+            {rel: 'icon', type: 'image/png', href: '/static/favicon16.png', sizes: '16x16'},
+            {rel: 'icon', type: 'image/png', href: '/static/favicon32.png', sizes: '32x32'},
         ],
         meta: [
             { charset: 'utf-8' },
